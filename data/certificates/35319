@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="da" xmlns="http://www.w3.org/1999/xhtml" xmlns:ms="urn:schemas-microsoft-com:xslt">
+  <head>
+    <title>DS Målebrev </title>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <style type="text/css">
+               body {
+               padding: 10px 10px 10px 10px;
+               font-size: 10px;
+               }
+               @media print {
+               body {
+               padding: 0 0 0 0;
+               }
+               #brevadresse {
+               display: block;
+               margin-top: 0px;
+               margin-left: 0px;
+               }
+               }
+               label {
+               width: 17em;
+               display: inline-block;
+               }
+               #bemLabel {
+               position: relative;
+               top: 1em;
+               }
+               div {
+               padding-left: 17.3em;
+               }
+               table {
+               width: 100%;
+               table-layout: fixed;
+               }
+               th, label {
+               font-weight: 500;
+               }
+               th, td {
+               vertical-align: top;
+               text-align: left;
+               }
+               span {
+               font-weight: 900;
+               }
+               h3 {
+               font-size: 20px;
+               margin: 6px 0 0 0;
+               }
+               h4 {
+               margin: 6px 0 0 0;
+               }
+               #certifikatHoved {
+               text-align: center;
+               }
+               #certifikatBund {
+               text-align: center;
+               font-weight: 500;
+               }
+               hr {
+               margin: 2em 0 2em 0;
+               }
+               .ikkegyldig {
+               color: red;
+               font-weight: 900;
+               font-size: 2.4em;
+               }
+            </style>
+    <style type="text/css">
+                  * {
+                  font-size: 10px;
+                  }
+                  hr {
+                  margin: 1.5em 0 .5em 0;
+                  }
+               </style>
+    <link rel="stylesheet" type="text/css" href="https://websejler.dk/res/websejler.css" />
+  </head>
+  <body>
+    <table>
+      <col span="12" width="8.33%" />
+      <thead>
+        <tr>
+          <th colspan="6">
+            <img src="https://websejler.dk/res/images/DS-Logo-engelsk.gif" />
+          </th>
+          <th id="certifikatHoved" colspan="6">
+            <h3>DH Rating Certificate</h3>
+            <p>Certificate required as per<br />Racing Rule of Sailing 78.</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Owner</th>
+          <td colspan="11">
+            <b id="brevadresse"><br /><br /><br />*</b>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Certificate No.</th>
+          <td colspan="4">
+            <b>35319</b>
+          </td>
+          <th colspan="2">Issued on</th>
+          <td colspan="4">
+            <b>01-04-2019</b>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Class</th>
+          <td colspan="4">
+            <b>X-41</b>
+          </td>
+          <th colspan="2">Not valid after</th>
+          <td colspan="4">
+            <b>31-12-2019</b>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Sail No.</th>
+          <td colspan="4">
+            <b>GER 7350</b>
+          </td>
+          <th colspan="2">Club</th>
+          <td colspan="4">
+            <b>Flensborg Yacht Club</b>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Boat Name</th>
+          <td colspan="4">
+            <b>SYDBANK</b>
+          </td>
+          <th colspan="2">Class Status</th>
+          <td colspan="4">
+            <b>Uden DH standard</b>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Builder</th>
+          <td colspan="4">
+            <b>X-Yachts</b>
+          </td>
+          <th colspan="2">Year Built</th>
+          <td colspan="4">
+            <b>2008</b>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            <b>Ratings</b>
+          </th>
+          <th>Updated</th>
+          <td colspan="9">
+            <b>02-04-2019</b>
+          </td>
+        </tr>
+        <tr>
+          <th>GPH</th>
+          <td>
+            <b>502,0</b>
+          </td>
+          <th>TCC</th>
+          <td>
+            <b>1,331</b>
+          </td>
+        </tr>
+        <tr>
+          <th>TACIL</th>
+          <td>
+            <b>620,8</b>
+          </td>
+          <th>TACIM</th>
+          <td>
+            <b>498,0</b>
+          </td>
+          <th>TACIH</th>
+          <td>
+            <b>439,8</b>
+          </td>
+        </tr>
+        <tr>
+          <th>TAUDL</th>
+          <td>
+            <b>818,2</b>
+          </td>
+          <th>TAUDM</th>
+          <td>
+            <b>623,0</b>
+          </td>
+          <th>TAUDH</th>
+          <td>
+            <b>533,2</b>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="12">
+            <b>Calculation</b>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <b>Stability</b>
+          </th>
+          <th>SV</th>
+          <td>65,81</td>
+          <th>dp</th>
+          <td>*</td>
+          <th>Wmin</th>
+          <td>*</td>
+          <td colspan="5" />
+        </tr>
+        <tr>
+          <th>
+            <b>Hull</b>
+          </th>
+          <th>L</th>
+          <td>12,19</td>
+          <th>B</th>
+          <td>3,07</td>
+          <th>G</th>
+          <td>6,06</td>
+          <th>BogG</th>
+          <td>0,274</td>
+        </tr>
+        <tr>
+          <th>
+            <b>Sails</b>
+          </th>
+          <th>SSA</th>
+          <td>51,91</td>
+          <th>FA1</th>
+          <td>47,96</td>
+          <th>SAS</th>
+          <td>129,55</td>
+          <th>SAA</th>
+          <td>117,64</td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="12">
+            <b>Rig/sail measurement</b>
+          </th>
+        </tr>
+        <tr>
+          <th>E</th>
+          <td>5,50</td>
+          <th>P</th>
+          <td>15,85</td>
+          <th>HB</th>
+          <td>0,47</td>
+          <th>MGU</th>
+          <td>2,13</td>
+          <th>MGM</th>
+          <td>3,49</td>
+        </tr>
+        <tr>
+          <th>J</th>
+          <td>4,92</td>
+          <th>FSP</th>
+          <td>0,07</td>
+          <th>Tmax</th>
+          <td>17,00</td>
+          <th>LP</th>
+          <td>5,25</td>
+          <th>JHW</th>
+          <td>2,84</td>
+        </tr>
+        <tr>
+          <th>ISP</th>
+          <td>17,08</td>
+          <th>SPL</th>
+          <td>5,20</td>
+          <th>SL</th>
+          <td>17,37</td>
+          <th>SF</th>
+          <td>8,87</td>
+          <th>SMG</th>
+          <td>8,97</td>
+        </tr>
+        <tr>
+          <th>TPS</th>
+          <td>5,20</td>
+          <th>SLU</th>
+          <td>17,84</td>
+          <th>SLE</th>
+          <td>16,44</td>
+          <th>SFA</th>
+          <td>9,70</td>
+          <th>SMGA</th>
+          <td>7,87</td>
+        </tr>
+        <tr>
+          <th>MF</th>
+          <td>Ja</td>
+          <th>RF</th>
+          <td>Nej</td>
+          <th>Propel</th>
+          <td colspan="6">Fri foldepropel med 2-3 blade (2)</td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="12">
+            <b>Hull measurement</b>
+          </th>
+        </tr>
+        <tr>
+          <th>LOA</th>
+          <td>12,35</td>
+          <th>OF</th>
+          <td>0,16</td>
+          <th>OA</th>
+          <td>0,00</td>
+          <th>STF</th>
+          <td>1,45</td>
+          <th>AF</th>
+          <td>0,19</td>
+        </tr>
+        <tr>
+          <th>Bmax</th>
+          <td>3,65</td>
+          <th>SBmax</th>
+          <td>8,45</td>
+          <th>UDFSB</th>
+          <td>0,29</td>
+          <th>UDFBB</th>
+          <td>0,29</td>
+          <th>UDHBmax</th>
+          <td>0,00</td>
+          <th>UDHmax</th>
+          <td>0,00</td>
+        </tr>
+        <tr>
+          <th>Gmax</th>
+          <td>8,39</td>
+          <th>SGmax</th>
+          <td>6,35</td>
+          <th>FBSB</th>
+          <td>1,16</td>
+          <th>FBBB</th>
+          <td>1,17</td>
+        </tr>
+        <tr>
+          <th>D</th>
+          <td>7,08</td>
+          <th>K</th>
+          <td>2,68</td>
+          <th>KC</th>
+          <td>0,76</td>
+          <th>KF</th>
+          <td>Bulb</td>
+          <th>Skrogmatr.</th>
+          <td>GRP</td>
+        </tr>
+        <tr>
+          <th>WBF</th>
+          <td>*</td>
+          <th>WBL</th>
+          <td>*</td>
+          <th>WBT</th>
+          <td>*</td>
+          <th>WBV</th>
+          <td>*</td>
+          <th>SSC</th>
+          <td>*</td>
+          <th>SST</th>
+          <td>*</td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="12">
+            <b>Remarks</b>
+          </th>
+        </tr>
+        <tr>
+          <td colspan="12">Internal ballast 313 kg / 7.25 m fra stævn</td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <th colspan="12">
+            <h4>First Measurement</h4>
+          </th>
+        </tr>
+        <tr>
+          <th colspan="2">Measurer</th>
+          <td colspan="4">
+            <b>Gerd Kall</b>
+          </td>
+          <th colspan="2">Date</th>
+          <td colspan="4">
+            <b>22-04-2016</b>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12">
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="12" id="certifikatBund">Certificate authorized by <b>Danish Sailing Association</b>.<br />This Certificate can be checked against the official website of Danish Sailing Association:<br /><b>http://websejler.dk/da/certifikat/35319</b><p>Ownership can be verified by the owner</p><hr />Danish Sailing Association<br />Idraettens Hus – DK 2605 Broendby – Phone +45 8820 7010<br />www.websejler.dk | websejler@sejlsport.dk</td>
+        </tr>
+      </tbody>
+    </table>
+    <script type="text/javascript">
+
+               var _gaq = _gaq || [];
+               _gaq.push(['_setAccount', 'UA-21939057-1']);
+               _gaq.push(['_setDomainName', '.websejler.dk']);
+               _gaq.push(['_trackPageview']);
+
+               (function() {
+               var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+               ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+               var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+               })();
+
+            </script>
+  </body>
+</html>
