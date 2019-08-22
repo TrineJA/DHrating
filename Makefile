@@ -1,3 +1,5 @@
+PIPENV ?= PYTHONPATH=src pipenv run
+
 get-certificates:
 	bash get_certificates.sh
 
