@@ -2,16 +2,14 @@ from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
 from app import app, server
-from data import df_wl, df_circle, df_wl_diff, df_circle_diff
-from common_layout import common_layout
+import TAUD, TAUD_diff, TACI, TACI_diff
 
-## TODO: make table with data, make input to scale diff based on Nm
+## TODO: make input to scale diff based on Nm
 
 app.layout = html.Div(
     [
         # header
         html.Div([html.Span("DH Rating insights (powered by TalTrans)", className="app-title")], className="row header"),
-        #html.Div([html.Span('First Part', style={'color': 'blue', 'font-style': 'italic', 'font-weight': 'bold'}),' Second Part']),
         # tabs
         html.Div(
             [
@@ -53,15 +51,15 @@ app.layout = html.Div(
 def render_content(tab):
 
     if tab == "TAUD":
-        return common_layout(df_wl)
+        return TAUD.layout
     elif tab == "TACI":
-        return common_layout(df_circle)
+        return TACI.layout
     elif tab == "TAUD_diff":
-        return common_layout(df_wl_diff)
+        return TAUD_diff.layout
     elif tab == "TACI_diff":
-        return common_layout(df_circle_diff)
+        return TACI_diff.layout
     else:
-        return common_layout(df_wl)
+        return TAUD.layout
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ verify_ssl = true
 pandas = "*"
 beautifulsoup4 = "*"
 glob3 = "*"
-dash = "~=0.43.0"
+dash = "==1.2.0"
 dash-html-components = "*"
 plotly = "*"
 gunicorn = "*"
