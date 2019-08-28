@@ -1,10 +1,8 @@
 import dash_html_components as html
 import dash_core_components as dcc
 import dash_table
-from dash_table.Format import Format
 
 from data_utilities import wide_to_long
-from data import myBoat
 
 import plotly.graph_objs as go
 

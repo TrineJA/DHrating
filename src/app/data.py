@@ -33,7 +33,7 @@ df_cert_diff = df_cert.copy()
 mask = df_cert_diff.columns.str.contains('TAUD|TACI')
 ws_cols = df_cert_diff.columns[mask]
 # do the subtraction
-df_cert_diff[ws_cols] = df_cert_diff[ws_cols] - df_cert_diff.loc[df_cert_diff.BoatKey == myBoat, ws_cols].values.squeeze()
+df_cert_diff[ws_cols] = round(df_cert_diff[ws_cols] - df_cert_diff.loc[df_cert_diff.BoatKey == myBoat, ws_cols].values.squeeze(),1)
 
 ## split data in TACI and TAUD
 df_wl, df_circle = split_TAUD_TACI(df_cert)
