@@ -8,4 +8,10 @@ Otherwise, just run `make all`
 
 ## Heroku stuff
 1) login in using heroku cli: `heroku login`
-2) `heroku create APPNAME` to create your app
+2) `heroku create APPNAME` to create your app (here APPNAME=dh-rating)
+3) `git push heroku master` (this will push both to heroku and your master branch in git)
+
+This will make your app run in 1 dyno (container).
+`heroku open` will open your app (from https://APPNAME.herokuapp.com/)
+Use `heroku ps` to see how many dynos you have running.
+Use `make heroku-local` to run locally ( http://localhost:5000)
