@@ -42,7 +42,7 @@ def common_layout(df):
         html.Div([
             dash_table.DataTable(id='t_ratings',
                                  columns=
-                                 [{'name': 'BoatKey', 'id': 'BoatKey', 'type': 'text'}] + [{"name": i, "id": i, 'type':'numeric'} for i in list(set(df.columns).difference(set(['BoatKey'])))],
+                                 [{'name': 'BoatKey', 'id': 'BoatKey', 'type': 'text'}] + [{"name": i, "id": i, 'type':'numeric'} for i in df.columns.drop('BoatKey')],
                                  data=df.to_dict('records'),
                                  style_cell_conditional=[
                                      {'if': {'column_id': 'BoatKey'}, 'width': '20%'},
