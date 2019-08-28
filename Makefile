@@ -6,8 +6,11 @@ get-certificates:
 preprocess-data:
 		$(PIPENV) python src/preprocess/preprocess.py
 
-dashboard:
+dash-local:
 		$(PIPENV) python src/app/index.py
+
+heroku-local:
+	heroku local web
 
 clean-certificates:
 	rm -f data/certificates/*
@@ -20,9 +23,5 @@ clean-pickle-files:
 clean-all: clean-certificates clean-pickle-files
 .PHONY: clean-all
 
-all: clean-all get-certificates preprocess-data dashboard
+all: clean-all get-certificates preprocess-data dash-local
 .PHONY: all
-
-make heroku-local:
-	heroku local web
-
