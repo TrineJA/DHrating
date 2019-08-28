@@ -10,7 +10,8 @@ from common_layout import common_layout
 app.layout = html.Div(
     [
         # header
-        html.Div([html.Span("DH Rating overview", className="app-title")], className="row header"),
+        html.Div([html.Span("DH Rating insights (powered by TalTrans)", className="app-title")], className="row header"),
+        #html.Div([html.Span('First Part', style={'color': 'blue', 'font-style': 'italic', 'font-weight': 'bold'}),' Second Part']),
         # tabs
         html.Div(
             [

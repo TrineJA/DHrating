@@ -12,6 +12,7 @@ glob3 = "*"
 dash = "~=0.43.0"
 dash-html-components = "*"
 plotly = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
