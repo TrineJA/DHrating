@@ -1,7 +1,10 @@
 import dash_html_components as html
 import dash_core_components as dcc
+import dash_table
+from dash_table.Format import Format
 
 from data_utilities import wide_to_long
+from data import myBoat
 
 import plotly.graph_objs as go
 
@@ -12,7 +15,7 @@ def common_layout(df):
     # define layout
     layout = html.Div([
         html.Div([
-            dcc.Graph(id='f_ratings_diff',
+            dcc.Graph(id='f_ratings',
                       figure={
                           'data': [
                               go.Scatter(
@@ -36,6 +39,32 @@ def common_layout(df):
                           )
                       }
             )
+        ], style={'marginBottom': 30}),
+
+        html.Div([
+            dash_table.DataTable(id='t_ratings',
+                                 columns=
+                                 [{'name': 'BoatKey', 'id': 'BoatKey', 'type': 'text'}] + [{"name": i, "id": i, 'type':'numeric'} for i in list(set(df.columns).difference(set(['BoatKey'])))],
+                                 data=df.to_dict('records'),
+                                 style_cell_conditional=[
+                                     {'if': {'column_id': 'BoatKey'}, 'width': '20%'},
+                                     {
+                                         'if': {'column_id': 'BoatKey'},
+                                         'textAlign': 'left'
+                                     },
+                                 ],
+                                 style_data_conditional=[
+                                     {
+                                         'if': {'row_index': 'odd'},
+                                         'backgroundColor': 'rgb(248, 248, 248)'
+                                     },
+                                 ],
+                                 style_header={
+                                     'backgroundColor': 'rgb(230, 230, 230)',
+                                     'fontWeight': 'bold'
+                                 },
+                                 )
+            # TODO: highlight based on value not rowindex, sort table, format decimal
         ])
     ])
 
