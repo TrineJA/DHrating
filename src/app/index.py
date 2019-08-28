@@ -20,9 +20,9 @@ app.layout = html.Div(
                     style={"height": "20", "verticalAlign": "middle"},
                     children=[
                         dcc.Tab(label="Windward/leeward", value="TAUD"),
-                        dcc.Tab(label="Windward/leeward - relative", value="TAUD_diff"),
+                        dcc.Tab(label="Windward/leeward - relative (negative is faster)", value="TAUD_diff"),
                         dcc.Tab(label="Circle", value="TACI"),
-                        dcc.Tab(label="Circle - relative", value="TACI_diff"),
+                        dcc.Tab(label="Circle - relative (negative is faster)", value="TACI_diff"),
                     ],
                     value="rating_tab",
                 )

@@ -39,6 +39,8 @@ def common_layout(df):
             )
         ], style={'marginBottom': 30}),
 
+        html.Div([]),
+
         html.Div([
             dash_table.DataTable(id='t_ratings',
                                  columns=
@@ -63,7 +65,7 @@ def common_layout(df):
                                  },
                                  )
             # TODO: highlight based on value not rowindex, sort table, format decimal
-        ])
+        ], style={'marginBottom': 30})
     ])
 
     return layout
