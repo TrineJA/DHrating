@@ -11,9 +11,9 @@ def common_layout(df):
                       figure={
                           'data': [
                               go.Scatter(
-                                  x=df[df['SailNo'] == i]['metric'],
-                                  y=df[df['SailNo'] == i]['value'],
-                                  text=df[df['SailNo'] == i]['Class'],
+                                  x=df[df['BoatKey'] == i]['metric'],
+                                  y=df[df['BoatKey'] == i]['value'],
+                                  text=df[df['BoatKey'] == i]['BoatKey'],
                                   mode='markers',
                                   opacity=0.7,
                                   marker={
@@ -21,7 +21,7 @@ def common_layout(df):
                                       'line': {'width': 0.5, 'color': 'white'}
                                   },
                                   name=i
-                              ) for i in df.SailNo.unique()
+                              ) for i in df.BoatKey.unique()
                           ],
                           'layout': go.Layout(
                               yaxis={'title': 'Seconds per Nautical Mile'},

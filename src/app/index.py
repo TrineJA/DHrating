@@ -5,7 +5,7 @@ from app import app, server
 from data import df_wl, df_circle, df_wl_diff, df_circle_diff
 from common_layout import common_layout
 
-## TODO: add class to identifier, make table with data, make input to scale diff based on Nm
+## TODO: make table with data, make input to scale diff based on Nm
 
 app.layout = html.Div(
     [
@@ -19,10 +19,10 @@ app.layout = html.Div(
                     id="tabs",
                     style={"height": "20", "verticalAlign": "middle"},
                     children=[
-                        dcc.Tab(label="Windward/leeward - Abs", value="TAUD"),
-                        dcc.Tab(label="Windward/leeward - Diff", value="TAUD_diff"),
-                        dcc.Tab(label="Circle - Abs", value="TACI"),
-                        dcc.Tab(label="Circle - Diff", value="TACI_diff"),
+                        dcc.Tab(label="Windward/leeward", value="TAUD"),
+                        dcc.Tab(label="Windward/leeward - relative", value="TAUD_diff"),
+                        dcc.Tab(label="Circle", value="TACI"),
+                        dcc.Tab(label="Circle - relative", value="TACI_diff"),
                     ],
                     value="rating_tab",
                 )
