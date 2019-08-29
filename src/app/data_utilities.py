@@ -5,9 +5,9 @@ def split_TAUD_TACI(df:pd.DataFrame)->pd.DataFrame:
     mask_wl = df.columns.str.contains('TAUD|BoatKey')
     mask_circle = df.columns.str.contains('TACI|BoatKey')
     df_wl = df.loc[:,mask_wl].copy()
-    df_wl.sort_values('3-9ms_TAUDM', inplace=True)
+    df_wl.sort_values('3-9ms_TAUDM', ascending=False, inplace=True)
     df_circle = df.loc[:,mask_circle].copy()
-    df_circle.sort_values('3-9ms_TACIM', inplace=True)
+    df_circle.sort_values('3-9ms_TACIM', ascending=False, inplace=True)
     return df_wl, df_circle
 
 

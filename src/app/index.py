@@ -5,8 +5,7 @@ from app import app, server
 import TAUD, TAUD_diff, TACI, TACI_diff
 
 ## TODO: make input to scale diff based on Nm
-## TODO: Sort desc as default. delete from plot only works for selected rows
-## TODO: left align all cols so they are close to sort tip
+## TODO: delete from plot only works for selected rows
 
 app.layout = html.Div(
     [

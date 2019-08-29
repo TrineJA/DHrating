@@ -27,7 +27,6 @@ layout = html.Div([
                              row_selectable="multi",
                              selected_rows=[],
                              style_cell_conditional=[
-                                 {'if': {'column_id': 'BoatKey'}, 'width': '20%'},
                                  {
                                      'if': {'column_id': 'BoatKey'},
                                      'textAlign': 'left'
