@@ -5,6 +5,8 @@ from app import app, server
 import TAUD, TAUD_diff, TACI, TACI_diff
 
 ## TODO: make input to scale diff based on Nm
+## TODO: Sort desc as default. delete from plot only works for selected rows
+## TODO: left align all cols so they are close to sort tip
 
 app.layout = html.Div(
     [
@@ -18,9 +20,9 @@ app.layout = html.Div(
                     style={"height": "20", "verticalAlign": "middle"},
                     children=[
                         dcc.Tab(label="Windward/leeward", value="TAUD"),
-                        dcc.Tab(label="Windward/leeward - relative (negative is faster)", value="TAUD_diff"),
+                        dcc.Tab(label="Windward/leeward - relative", value="TAUD_diff"),
                         dcc.Tab(label="Circle", value="TACI"),
-                        dcc.Tab(label="Circle - relative (negative is faster)", value="TACI_diff"),
+                        dcc.Tab(label="Circle - relative", value="TACI_diff"),
                     ],
                     value="rating_tab",
                 )

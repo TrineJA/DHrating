@@ -14,6 +14,7 @@ from data import df_circle_diff as df
 
 # define layout
 layout = html.Div([
+    html.H3("Time difference to our boat. Negative is faster"),
     html.Div(id='f_ratings_reactive_container_taci_diff', style={'marginBottom': 30}),
 
     html.Div([
@@ -32,6 +33,12 @@ layout = html.Div([
                                      'textAlign': 'left'
                                  },
                              ],
+                             style_data_conditional=[
+                                 {
+                                     'if': {'row_index': 'odd'},
+                                     'backgroundColor': 'rgb(248, 248, 248)'
+                                 }
+                             ],
                              style_header={
                                  'backgroundColor': 'rgb(230, 230, 230)',
                                  'fontWeight': 'bold'
@@ -39,18 +46,6 @@ layout = html.Div([
                              ),
     ], style={'marginBottom': 30})
 ])
-
-# highlight selected rows
-@app.callback(
-    Output('t_ratings_reactive_taci_diff', 'style_data_conditional'),
-    [Input('t_ratings_reactive_taci_diff', 'selected_rows')]
-)
-def update_table_style(selected_rows):
-    return [{
-        'if': { 'row_index': i },
-        'background_color': '#D2F3FF'
-    } for i in selected_rows]
-
 
 # make graph for selected rows
 @app.callback(

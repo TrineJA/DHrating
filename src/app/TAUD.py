@@ -32,6 +32,12 @@ layout = html.Div([
                                      'textAlign': 'left'
                                  },
                              ],
+                             style_data_conditional=[
+                                 {
+                                     'if': {'row_index': 'odd'},
+                                     'backgroundColor': 'rgb(248, 248, 248)'
+                                 }
+                             ],
                              style_header={
                                  'backgroundColor': 'rgb(230, 230, 230)',
                                  'fontWeight': 'bold'
@@ -39,18 +45,6 @@ layout = html.Div([
                              ),
     ], style={'marginBottom': 30})
 ])
-
-# highlight selected rows
-@app.callback(
-    Output('t_ratings_reactive_taud', 'style_data_conditional'),
-    [Input('t_ratings_reactive_taud', 'selected_rows')]
-)
-def update_table_style(selected_rows):
-    return [{
-        'if': { 'row_index': i },
-        'background_color': '#D2F3FF'
-    } for i in selected_rows]
-
 
 # make graph for selected rows
 @app.callback(
