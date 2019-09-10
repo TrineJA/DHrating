@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 import glob
-from data_utilities import split_TAUD_TACI
+from data_utilities import split_TAUD_TACI, get_rating_columns
 
 ## configs
 myBoat = 'ITALIA 9.98 / DEN-998'
@@ -30,8 +30,7 @@ df_cert.rename(columns={"TAUDL":"0-4ms_TAUDL",
 # calculate diff from our boat
 df_cert_diff = df_cert.copy()
 # get columns to diff
-mask = df_cert_diff.columns.str.contains('TAUD|TACI')
-ws_cols = df_cert_diff.columns[mask]
+ws_cols = get_rating_columns(df_cert_diff)
 # do the subtraction
 df_cert_diff[ws_cols] = round(df_cert_diff[ws_cols] - df_cert_diff.loc[df_cert_diff.BoatKey == myBoat, ws_cols].values.squeeze(),1)
 

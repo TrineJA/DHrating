@@ -14,3 +14,10 @@ def split_TAUD_TACI(df:pd.DataFrame)->pd.DataFrame:
 def wide_to_long(df_wide:pd.DataFrame)->pd.DataFrame:
     df_long = pd.melt(df_wide, id_vars=['BoatKey'], var_name='metric', value_name='value')
     return df_long
+
+
+def get_rating_columns(df:pd.DataFrame)->list:
+    # get columns to diff
+    mask = df.columns.str.contains('TAUD|TACI')
+    rating_columns = df.columns[mask]
+    return rating_columns
