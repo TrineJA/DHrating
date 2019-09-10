@@ -22,7 +22,6 @@ layout = html.Div([
                              [{'name': 'BoatKey', 'id': 'BoatKey', 'type': 'text'}] + [{"name": i, "id": i, 'type':'numeric'} for i in df.columns.drop('BoatKey')],
                              data=df.to_dict('records'),
                              sort_action="native",
-                             row_deletable=True,
                              row_selectable="multi",
                              selected_rows=[],
                              style_cell_conditional=[

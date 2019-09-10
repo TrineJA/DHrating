@@ -5,7 +5,6 @@ from app import app, server
 import TAUD, TAUD_diff, TACI, TACI_diff
 
 ## TODO: make input to scale diff based on Nm
-## TODO: delete from plot only works for selected rows
 
 app.layout = html.Div(
     [
