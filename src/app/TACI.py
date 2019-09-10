@@ -14,7 +14,6 @@ from data import df_circle as df
 
 # define layout
 layout = html.Div([
-    html.Div(id='f_ratings_reactive_container_taci', style={'marginBottom': 30}),
 
     html.Div([
         dash_table.DataTable(id='t_ratings_reactive_taci',
@@ -41,7 +40,9 @@ layout = html.Div([
                                  'fontWeight': 'bold'
                              },
                              ),
-    ], style={'marginBottom': 30})
+    ], style={'marginBottom': 30}),
+
+    html.Div(id='f_ratings_reactive_container_taci', style={'marginBottom': 30})
 ])
 
 # make graph for selected rows
