@@ -2,8 +2,9 @@ import dash_html_components as html
 import dash_core_components as dcc
 import dash_table
 from dash.dependencies import Input, Output
+import numpy as np
 
-from data_utilities import wide_to_long, get_rating_columns
+from data_utilities import wide_to_long, get_rating_columns, my_funky_formatter
 
 from app import app
 
@@ -37,7 +38,7 @@ layout = html.Div([
     html.Div([
         dash_table.DataTable(id='t_ratings_reactive_taci_diff',
                              columns=
-                             [{'name': 'BoatKey', 'id': 'BoatKey', 'type': 'text'}] + [{"name": i, "id": i, 'type':'numeric'} for i in df.columns.drop('BoatKey')],
+                             [{'name': 'BoatKey', 'id': 'BoatKey', 'type': 'text'}] + [{"name": i, "id": i, 'type':'text'} for i in df.columns.drop('BoatKey')],
                              sort_action="native",
                              row_selectable="multi",
                              selected_rows=[],
@@ -77,7 +78,14 @@ def update_table(scaling_factor):
 
     #df_tmp introduced to avoid scaling is relative to what is currently in table
     df_tmp = df.copy()
-    df_tmp[ws_cols] = round(df_tmp[ws_cols] * float(scaling_factor), 1)
+
+    # scale relevant columns
+    df_tmp[ws_cols] = df_tmp[ws_cols] * float(scaling_factor)
+
+    # format difference in minutes and seconds for nicer printing
+    df_tmp[ws_cols] = df_tmp[ws_cols].applymap(my_funky_formatter)
+
+
     return df_tmp.to_dict('records')
 
 
